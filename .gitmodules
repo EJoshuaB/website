@@ -1,0 +1,4 @@
+[submodule "EJoshB/public"]
+	path = EJoshB/public
+	url = https://github.com/EJoshuaB/EJoshuaB.github.io.git
+	branch = main
