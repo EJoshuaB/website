@@ -30,7 +30,7 @@ menu:
 
 params:
   description: "A website built through Hugo and blogdown."
-  footer: "Joshua Bautista 2024 -- {Year} | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+  footer: "Joshua Bautista 2024 -- {Year} | [Github](https://github.com/EJoshuaB) | Email: ervinjoshuab@gmail.com"
 
 markup:
   highlight:
