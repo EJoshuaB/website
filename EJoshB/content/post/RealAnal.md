@@ -7,7 +7,7 @@ categories:
 tags:
   - Higher Math
 ---
-This was written from the perspective of a highschool math oly student, please don't expect anything too concrete.
+Simply notes from an oly guy.
 ## Metric Spaces
 
 A metric space is defined like groups are, over some set of points \(M\) and some distance function \(d\) called a *metric*. Formally \(d: M \times M \mapsto \mathbb{R}_{\geq 0}\) Any metric space has the following conditions for \(x,y,z\in M\):
@@ -84,3 +84,27 @@ The idea is to considering some interval \([a,b]\). Heuristically, if \(f\) is s
 ---
 
 ## Topological Spaces
+
+Imagine we take metric spaces, and throw out the metric 🤯. A topology \(\Gamma\) is defined over a set of points \(X\) as essentially a set of open sets that follow the property:
+
+- \(X\) and the empty set are in \(\Gamma\)
+- the union of any subset of \(\Gamma\) is in \(\Gamma\)
+- the intersection of any finite subset of \(\Gamma\) is in \(\Gamma\)
+
+For this reason, our definition of a continuous function, closed sets and homeomorphic are the same.
+
+---
+
+**Hausdorff**: A topological space \(X\) is *Hausdorff* if any two points in \(X\) have some non-intersecting open neighborhoods.
+
+**Subspace**: We can define a subspace \(S \subseteq X\) by taking \(K \cap S\) for \(K \subseteq X\) as the open subsets.
+
+**Connected**: A space is *connected* if \(\exists\) nontrivial open sets that are closed. Define disconnected similarly.
+
+**Path**: A path is a continuous function between two points, in particular we take \(f: [a,b] \to X\) for some non-trivial interval. Notably, a space is *path connected* if any two points have a path between them.
+
+**Homotopy**: A path homotopy on \(f,g: [a,b] \to X\) is a continuous function \(\mathcal{P}: [a,b] \times [a,b] \to X\) on the space between the two paths. In particular \(\mathcal{P}(0,x) \in f\) and \(\mathcal{P}(x,0) \in g\). 
+
+**Simply Connected**: A space is simply connected if any two paths are homotopic.
+
+**Basis**: A basis of a topological is a set of open sets, of which every other open set is the union of some.
