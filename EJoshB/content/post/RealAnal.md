@@ -64,6 +64,8 @@ By name this is intuitive, but by the definitions this is harder to see. The pro
 
 Let \(x\) be a limit point of \(B\). FTSOC assume \(x \in A\), then \(\exists \epsilon\) such that \(N_{\epsilon}(x) \subset A\), but this contradicts the fact that \(x\) is a limit point of \(B\), so every limit point of \(B\) is in \(B\). We are done.
 
+![OpenClosed](/OpenClosed.png)
+
 > Banach Fixed Point Theorem: If \(M\) is a complete metric, then any continuous function \(T: M \to M\) such that \(d(T(x),T(y)) \leq qd(x,y)\) for some fixed \(q \in [0,1)\) and all \((x,y) \in M^2\) has exactly one fixed point.
 > 
 
@@ -104,6 +106,8 @@ For this reason, our definition of a continuous function, closed sets and homeom
 **Path**: A path is a continuous function between two points, in particular we take \(f: [a,b] \to X\) for some non-trivial interval. Notably, a space is *path connected* if any two points have a path between them.
 
 **Homotopy**: A path homotopy on \(f,g: [a,b] \to X\) is a continuous function \(\mathcal{P}: [a,b] \times [a,b] \to X\) on the space between the two paths. In particular \(\mathcal{P}(0,x) \in f\) and \(\mathcal{P}(x,0) \in g\). 
+
+![PathHomotopy](/PathHomotopy.png)
 
 **Simply Connected**: A space is simply connected if any two paths are homotopic.
 
