@@ -26,11 +26,11 @@ The following are a list of definitions, for the most part they are intuitive by
 
 **Convergence**: Given a sequence \(\{x_n\}_{n\geq1}\) in \(M\), we say that it converges to some point \(x\) if for every \(\epsilon>0\), \(d(x,x_n) < \epsilon\) for all sufficiently large \(n\). We can write \(\lim_{n \to \infty}x_n =x\).
 
-**Open**: A subset \(A \subseteq M\) is called *open* if every point in \(K\) has some neighborhood contained entirely in \(M\). Note that \(K\) being a subset as one of the reasons this definition makes sense.
+**Open**: A subset \(A \subseteq M\) is called *open* if every point in \(K\) has some neighborhood contained entirely in \(M\). Note that \(K\) being a subset as one of the reasons this definition makes sense. The union is a (possibly infinite) collection of open sets is open.
 
 **Continuous**: A function \(f: M \to N\) is defined as continuous if for every \(p \in M\) and \(\epsilon >0\) there exists \(\delta > 0\) such that \(d_1(x,p)<\delta \implies d_2(f(x),f(p))<\epsilon\) where \(d_1\) and \(d_2\) are the respective distance functions.
 
-From this we can note that \(\lim_{n\to \infty}f(x_n) = f(x)\). Furthermore if \(f\) if bijective and \(f^{-1}\) is *also continuous* then \(M \sim N\) are homeomorphic
+From this we can note that \(\lim_{n\to \infty}f(x_n) = f(x)\). Furthermore if \(f\) if bijective and \(f^{-1}\) is *also continuous* then \(M ~ N\) are homeomorphic. Further furthermore, if the size condition ‘holds everywhere,’ in particular if we can write \(d(x,y) < \delta \implies d(f(x),f(y)) < \epsilon\) for *general* \(x\) and \(y\) then the function is known as Uniformly Continuous. 
 
 **Cauchy Sequence**: A sequence \((x_n)_{n\geq 1}\) is *Cauchy* if \(d(x_m,x_n) < \epsilon\) for sufficiently large \(m,n\).
 
@@ -38,13 +38,13 @@ From this we can note that \(\lim_{n\to \infty}f(x_n) = f(x)\). Furthermore if \
 
 **Limit Point**: A limit point is a point \(x \in A\) such that every neighborhood of \(x\) is nonempty in \(A\). Additionally, any limit point can be thought of as the ‘limit of some converging sequence,’ hence the name. These definitions are equivalent because we can construct a converging sequence from the first definition.
 
-**Closed**: A subset \(A \subseteq M\) is called *closed* if for every converging sequence \((x_n)\) in \(A\), their limit is also in \(A\). In particular, every limit point of \(A\) is a point in \(A\). If the converse holds too then \(A\) is *perfect.*
+**Closed**: A subset \(A \subseteq M\) is called *closed* if for every converging sequence \((x_n)\) in \(A\), their limit is also in \(A\). In particular, every limit point of \(A\) is a point in \(A\). If the converse holds too then \(A\) is *perfect.* The intersection of a (possibly infinite) collection of closed sets is closed.
 
 **Bounded**: \(M\) is *bounded* if the distance between any two points in \(M\) is bounded. If \(M \subseteq N\) then it’s sufficient that for some point \(n \in N\) and any \(m \in M\) we have \(d(n,m) < C\) for constant \(C\).
 
 **Totally Bounded**: \(M\) is *totally bounded* if \(M\) can be covered by finitely many \(\epsilon\)-neighborhoods for any epsilon. In particular, this implies \(M\) is bounded by the triangle inequality.
 
-**Dense**: \(N \subset M\) is dense if every point in \(M\) is either in \(N\) or a limit point of \(N\). 
+**Dense**: \(N \subset M\) is dense if every point in \(M\) is either in \(N\) or a limit point of \(N\).
 
 ---
 
@@ -66,7 +66,7 @@ Let \(x\) be a limit point of \(B\). FTSOC assume \(x \in A\), then \(\exists \e
 
 ![OpenClosed](/OpenClosed.png)
 
-> Banach Fixed Point Theorem: If \(M\) is a complete metric, then any continuous function \(T: M \to M\) such that \(d(T(x),T(y)) \leq qd(x,y)\) for some fixed \(q \in [0,1)\) and all \((x,y) \in M^2\) has exactly one fixed point.
+> **Banach Fixed Point Theorem:** If \(M\) is a complete metric, then any continuous function \(T: M \to M\) such that \(d(T(x),T(y)) \leq qd(x,y)\) for some fixed \(q \in [0,1)\) and all \((x,y) \in M^2\) has exactly one fixed point.
 > 
 
 First note that there is at most 1 fixed point, because otherwise their distance would be invariant under \(T\). Now for arbitrary \(x\) define the sequence \(x_1 = x\) and \(x_{n+1} = T(x_n)\) for all \(n \geq 1\). Note that
@@ -112,3 +112,52 @@ For this reason, our definition of a continuous function, closed sets and homeom
 **Simply Connected**: A space is simply connected if any two paths are homotopic.
 
 **Basis**: A basis of a topological is a set of open sets, of which every other open set is the union of some.
+
+---
+
+### Compactness
+
+Here we state two equivalent definitions of compactness
+
+- **Sequential**: A metric space is *sequentially compact* if every sequence has a converging subsequence, this is notably infinite.
+- **Open Covered**: First, an open cover of a set \(S \subseteq X\) is a collection \((G_n)\) of open subsets s.t. \( S \subset \bigcup G_n\). \(S\) is *compact* if we can take a finite number of these subsets and still cover \(S\).
+
+Note that the second includes topological spaces. Here’s a couple of nice implications:
+
+- On metric spaces, these two definitions are equivalent.
+- \(S \subset X \subset Y\), \(S\) is compact wrt \(Y\) iff it is compact wrt \(X\).
+- A closed subset of a compact set is compact.
+- Compact sets are totally bounded (consider the finite cover).
+- On a continuous function, the image of a compact set is compact. Moreover on compact sets, any continuous function is uniformly continuous.
+- \(f: X \to \mathbb{R}\) if \(f\) is continuous and \(X\) is compact then \(f\) has a maximum.
+
+---
+
+### Theorems and all that pt.2
+
+> **Heine-Borel and Bolzano-Weierstraß:** A set in \(M\) is closed and bounded iff it is compact and sequentially compact.
+> 
+
+> **Tychnoff:** The product of any set of compact topological spaces is compact.
+> 
+
+---
+
+### Examples
+
+> Consider a collection \((G_n)\) of compact subsets. If the intersection of every finite subcollection of these is nonempty, then \(\bigcup G_n \neq \{\}\).
+> 
+
+> Can \(\mathbb{R}^2\) be partitioned into disjoint non-trivial disk boundaries? What if we exclude finitely many points?
+> 
+
+For the case with no points excluded, consider the open sets determined by the disks, then by the first example, all the disks inside one of the disks have a non-empty intersection.
+
+---
+
+List of resources:
+
+1. Analysis II by Terence Tao
+2. Principles of Mathematical Analysis by Rudin W. 
+3. Napkin by Evan Chen
+4. Real Mathematical Analysis by Charles Pugh
